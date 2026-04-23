@@ -1,42 +1,36 @@
-# 02730341
-
-import matplotlib.pyplot as plt
+# CID: 02730341
 import math
+import matplotlib.pyplot as plt
 
-#define the function, set a to 3 (4th digit of my CID)
 a = 3
 def Series(N):
-    #initialize the sum S to 0
+    # define sum, set equal to 0
     S = 0
-    #loop over all j
+    # loop over all j
     for j in range(-N, N + 1):
-        #initialize subSum to 0
+        # define subSum, set to 0
         subSum = 0
-
-        #loop over k
+        
+        # loop over all k
         for k in range(-j, j):
-            #skip if k == 0
+            # skip if k is 0
             if k == 0:
                 continue
-            #add to subsum
-            subSum += (-1) ** j * math.sin(a*k) / (k ** a)
+            # increase subSum
+            subSum += (-1) ** j * math.sin(a * k) / (k ** a)
+        
+        #add the subsum to S
+        S += subSum / (100 - a ** 2)
 
-        subSum /= (100 - a ** 2)
-        #add subsum to S
-        S += subSum
-    
-    return S
+    return S 
 
-#initialize arrays x and y
-x = []
-y = []
+# initialize the array containing integers 1 to 20
+x_s = [_ for _ in range(1, 21)]
 
-#loop over N, add N and Series(N) to x and y
-for N in range(1, 21):
-    x.append(N)
-    y.append(Series(N))
+# compute Series(X) for each x in the array above
+y_s = [Series(x) for x in x_s]
 
-#plot y against x
-plt.scatter(x=x, y=y)
-plt.xlim(0, 21)
+# plot Series(x) against x and show the figure
+plt.plot(x_s, y_s)
 plt.show()
+

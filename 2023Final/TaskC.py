@@ -11,7 +11,7 @@ y_s = [0]
 x_s = [0]
 
 plt.ion()
-plt.plot(y_s, y_s)
+plt.plot(x_s, y_s)
 plt.ylim(-5, 110)
 plt.xlim(-5, 110)
 plt.draw()
