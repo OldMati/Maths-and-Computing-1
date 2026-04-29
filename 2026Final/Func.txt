@@ -1,0 +1,17 @@
+def Func1(N):
+    for i in range(N):
+        for j in range(N):
+            a = 1
+    return
+
+def Func2(N):
+    for i in range(N):
+        a = 1
+    return
+    
+def Func3(N):
+    for i in range(N):
+        for j in range(N//2):
+            a = 1
+    return
+    
